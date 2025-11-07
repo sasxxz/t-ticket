@@ -22,13 +22,13 @@ type NolinePer struct {
 
 var (
 	per = map[int]string{
-		1775184: "王杭渝",
-		1775174: "孙凯",
-		1775164: "李晓升",
-		425424:  "王奥",
-		401041:  "崔星林",
-		401031:  "王硕",
-		314001:  "李斌",
+		1775184: "王杭渝(Adrian)",
+		1775174: "孙凯(Max)",
+		1775164: "李晓升(Mazuki)",
+		425424:  "王奥(Gallagher)",
+		401041:  "崔星林(Layne)",
+		401031:  "王硕(Patt)",
+		314001:  "李斌(Leven)",
 	}
 	OnPerId int
 	Url     string
@@ -46,7 +46,7 @@ func UdeskApi() {
 	var builder strings.Builder
 	builder.WriteString("https://servicecenter-alauda.udesk.cn/open_api_v1/callcenter_analysis/agents_of_group?&page=1&perpage=30&")
 	builder.WriteString(query.GetQuery())
-
+	// fmt.Println(builder.String())
 	resp, err := http.Get(builder.String())
 	if err != nil {
 		log.Fatalf("central get failed,err:%v\n", err)
